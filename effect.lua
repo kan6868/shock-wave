@@ -24,21 +24,21 @@ kernel.vertexData   = {
     name = "force",
     default = 0.05,
     min = 0.01,
-    max = 100,
+    max = 100.0,
     index = 1
   },
   {
     name = "posX",
     default = 0.5,
-    min = -0.5,
-    max = 1.5,
+    min = 0.0,
+    max = 1.0,
     index = 2
   },
   {
     name = "posY",
     default = 0.5,
-    min = 0.01,
-    max = 1,
+    min = 0.0,
+    max = 1.0,
     index = 3
   }
 }
@@ -51,8 +51,7 @@ kernel.fragment =
     P_COLOR vec2 position = vec2(CoronaVertexUserData.z, CoronaVertexUserData.w); // Position
     P_COLOR vec4 FragmentKernel( P_UV vec2 texCoord )
     {
-        P_COLOR float ratio = 0.5;
-        P_COLOR vec2 scale_uv = (texCoord - vec2(0.5, 0.0))/ vec2(ratio, 1.0) + vec2(0.5, 0.0);
+        P_COLOR vec2 scale_uv = (texCoord - vec2(0.5, 0.0))/ vec2(1.0, 2.0) + vec2(0.5, 0.0);
         P_COLOR float mask = (1.0 - smoothstep(size - 0.1, CoronaTotalTime - CoronaVertexUserData.x + size, length(scale_uv - position))) *
             smoothstep(CoronaTotalTime - CoronaVertexUserData.x + size - thickness - 0.1, 
             CoronaTotalTime - CoronaVertexUserData.x + size - thickness, length(scale_uv - position));

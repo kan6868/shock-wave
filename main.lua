@@ -51,6 +51,6 @@ timer.performWithDelay(800, function()
     local centerX = display.contentCenterX/display.actualContentWidth
     local centerY = display.contentCenterY/display.actualContentHeight
 
-    canvas.fill.effect.posX = -0.5 + math.random() * 2 -- range between (-0.5 -> 1.5)
+    canvas.fill.effect.posX = math.random()-- range between (0 -> 1)
     canvas.fill.effect.posY = math.random()-- range between (0 -> 1)
 end, 100)
