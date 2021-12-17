@@ -30,8 +30,8 @@ kernel.vertexData   = {
   {
     name = "posX",
     default = 0.5,
-    min = 0.01,
-    max = 1,
+    min = -0.5,
+    max = 1.5,
     index = 2
   },
   {
